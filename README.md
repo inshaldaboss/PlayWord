@@ -1,2 +1,2 @@
 # PlayWord
-A fun game ;)
+Creating a Game using a python library: pygame
