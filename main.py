@@ -1,3 +1,33 @@
+import pygame
+import sys
+import random
+
+pygame.init() #initializes few modules/works like a constructor
+screen = pygame.display.set_mode((800, 500)) #Gaming screen width/hight initialization
+pygame.display.set_caption('PlayWords')
+clock = pygame.time.Clock()
+
+#Word List
+word_list = ["SPACE","COMPUTER","MONEY","HOTEL","WORLD","PICTURE","HUMANS","LAZY","BOOK","ACCUSE","SLAVE","MEMES",
+"PLAYGROUND","NUMBERS","DIAPERS","ANIMALS","SPIKY","CACTUS","POLICE","BEAUTY","FOOTBALL","BALL","ELECTRICITY",
+"DICTIONARY","CARTOON","CORONA","TISSUE","PAPER","CURTAIN","KEY","BRIGHT","DARK","ACHIEVE","ACTOR","RECORD","BIOLOGY","DEPRESSION","EXAMINATION",
+"BULLY","ROBOT","HOME","SCREEN","IMPRESSIVE","JOYFUL","PLAY","DESIGN","BATTERY","STATUE","BREAK","DINOSAUR",
+"SHAKER","PRAY","FLOW","SOFT","HELP","CIRCLE","RACE","REACT","GOOD"]
+#Function for selecting random word from given Word List
+def word_generator():
+    temp_word=random.choice(word_list)
+    return temp_word
+#_______________
+#Global Variable Declaration
+game_active = False
+winner_status = False
+win=True
+Word = word_generator()
+moves_left = len(Word) +2
+guessed_words = []
+letter_list = []
+Buttons = []
+
 def phase_one_handle_events():
     """
     Phase 1:
